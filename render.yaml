@@ -16,7 +16,7 @@ services:
       - key: DB_NAME
         value: items_vs0o
       - key: DB_USER
-        value: customer
+        value: dev
       - key: DB_PASSWORD
         value: "123"
       - key: DB_MAX_CONNECTIONS
