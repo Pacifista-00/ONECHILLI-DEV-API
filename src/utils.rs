@@ -392,7 +392,6 @@ pub mod pagination {
 }
 
 /// Logging utilities
-/// Logging utilities
 pub mod logging {
     use tracing::{info, warn, error};
     // No need to explicitly use `serde::Serialize` if you're not calling its methods

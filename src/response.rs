@@ -120,4 +120,4 @@ pub fn success_response<T: Serialize>(data: T, message: &str) -> Response {
 
 pub fn health_response(database_connected: bool) -> Response {
     HealthResponse::new(database_connected).into_response()
-}   
+}
