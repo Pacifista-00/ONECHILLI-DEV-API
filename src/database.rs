@@ -17,10 +17,8 @@ impl Database {
     pub async fn new(config: DatabaseConfig) -> Result<Self> {
         info!("Connecting to database...");
         
-        let database_url = format!(
-            "postgres://{}:{}@{}:{}/{}",
-            config.username, config.password, config.host, config.port, config.dbname
-        );
+        // Use the database_url directly from config
+        let database_url = &config.database_url;
 
         // Create connection pool with proper configuration
         let pool = PgPoolOptions::new()
@@ -28,7 +26,7 @@ impl Database {
             .acquire_timeout(Duration::from_secs(10))
             .idle_timeout(Duration::from_secs(600))
             .max_lifetime(Duration::from_secs(1800))
-            .connect(&database_url)
+            .connect(database_url)
             .await
             .map_err(|e| {
                 error!("Failed to connect to database: {}", e);

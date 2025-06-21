@@ -4,19 +4,19 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-tokio = { version = "1.45.1", features = ["full"] } # Was 1.0
-axum = "0.8.4" # Was 0.7
-serde = { version = "1.0.219", features = ["derive"] } # Was 1.0
-serde_json = "1.0.140" # Was 1.0
-sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid", "rust_decimal"] } # Was 0.7
-chrono = { version = "0.4.41", features = ["serde"] } # Was 0.4
-uuid = { version = "1.8.0", features = ["v4", "serde"] } # Was 1.0
-rust_decimal = { version = "1.37.1", features = ["serde"] } # Was 1.35
-anyhow = "1.0.98" # Was 1.0
-tracing = "0.1.40" # Was 0.1
-tracing-subscriber = "0.3.19" # Was 0.3
-tower = "0.4.13" # Was 0.4 (Note: latest stable version for `tower` is 0.4.13, not 0.5.x, which might be pre-release)
-tower-http = { version = "0.6.1", features = ["cors"] } # Was 0.5
-config = "0.13.4" # Was 0.13 (Note: latest stable is 0.13.4, even if crates.io shows 0.15.x as a higher version, which seems to be in active development or pre-release)
-thiserror = "1.0.61" # Was 1.0
-serde_yaml = "0.9.34" # Was 0.9 (Note: This crate is marked as deprecated by its maintainer. See important note below.)
+tokio = { version = "1.45.1", features = ["full"] }
+axum = "0.8.4"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+sqlx = { version = "0.8.6", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid", "rust_decimal"] }
+chrono = { version = "0.4.41", features = ["serde"] }
+uuid = { version = "1.8.0", features = ["v4", "serde"] }
+rust_decimal = { version = "1.37.1", features = ["serde"] }
+anyhow = "1.0.98"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.19"
+tower = "0.4.13" # The latest stable is 0.4.13. Tower has 0.5.x versions, but they appear to be in pre-release or development.
+tower-http = { version = "0.6.6", features = ["cors"] } # Updated from 0.6.1
+thiserror = "2.0.12" # Updated from 1.0.61 (this is a major version bump!)
+serde_yaml = "0.9.34" # Note: This crate is marked as deprecated by its maintainer.
+dotenvy = "0.15.7"
